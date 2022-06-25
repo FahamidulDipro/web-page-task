@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   AiFillStar,
   AiOutlineQuestionCircle,
@@ -7,30 +7,25 @@ import {
 import { FaAngleRight } from "react-icons/fa";
 import { RiShareForwardLine } from "react-icons/ri";
 const Home = () => {
+  //Loading data from data.json file
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch("data.json")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
+
   return (
     <div className="border  text-left p-5">
-      <h1 className="text-5xl font-bold">
-        This is Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio,
-        ut saepe. Quisquam officiis rem sunt dignissimos similique ratione,
-        consequuntur maiores?
-      </h1>
+      <h1 className="text-5xl font-bold">{data?.title}</h1>
       <p className="text-2xl mt-3 text-gray-400 font-semibold	flex items-center">
-        Multi-day Course{" "}
+        {data?.type}
         <AiOutlineQuestionCircle className="mt-1 ml-3"></AiOutlineQuestionCircle>
       </p>
 
       <div className="flex justify-between lg:flex-row md:flex-row sm:flex-col flex-col mt-20">
         <article className="text-xl lg:w-1/2 md:w-1/2 sm:w-full w-full mr-5">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus, possimus officia. Sunt ducimus dicta aperiam facere
-            natus inventore minima alias molestias! Veniam voluptates,
-            consectetur amet nemo architecto laborum atque ab! Lorem ipsum dolor
-            sit amet consectetur, adipisicing elit. Consectetur, optio pariatur
-            iure fugit inventore quasi sint dignissimos odit accusantium amet
-            adipisci! Non, at fugiat ducimus mollitia dolore reiciendis odio
-            facilis!
-          </p>
+          <p>{data?.shortDescription}</p>
           <div className="flex mt-8">
             <img
               src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-733872.jpg&fm=jpg"
@@ -38,7 +33,7 @@ const Home = () => {
               className=" h-10 w-10 rounded-full"
             />
             <h3 className="text-xl font-bold ml-3 text-violet-700">
-              Kimberly R Moseler
+              {data?.name}
             </h3>
           </div>
           <div className="flex items-center mt-5">
@@ -48,7 +43,9 @@ const Home = () => {
                 className="text-yellow-400 text-2xl"
               ></AiFillStar>
             ))}
-            <span className="ml-3">467 total reviews for the teacher</span>
+            <span className="ml-3">
+              {data?.teacherReviews} total reviews for the teacher
+            </span>
           </div>
           <div className="flex items-center mt-3">
             {[...Array(5).keys()].map((num) => (
@@ -57,9 +54,14 @@ const Home = () => {
                 className="text-yellow-400 text-2xl"
               ></AiFillStar>
             ))}
-            <span className="ml-3">5 reviews for the class</span>
+            <span className="ml-3">
+              {" "}
+              {data?.classReviews} reviews for the class
+            </span>
           </div>
-          <p className="text-xl font-bold mt-5">Completed by 21 learners</p>
+          <p className="text-xl font-bold mt-5">
+            Completed by {data?.learners} learners
+          </p>
 
           <div className="flex items-center ">
             <button className="bg-violet-700 p-3 text-white mt-10 rounded-full flex items-center">
