@@ -81,23 +81,17 @@ const Home = () => {
         <div className="img-container flex lg:w-1/2 md:w-1/2 sm:w-full w-full mt-3">
           <div className="mr-3">
             <img
-              src="https://w0.peakpx.com/wallpaper/4/918/HD-wallpaper-home-chen-chen-chao-evil-pink-art-house-luminos-tree-fantasy-green.jpg"
+              src={data?.images?.first}
               alt="art"
               className="rounded-tl-lg"
             />
           </div>
           <div className="w-1/2">
             <div className="mb-3">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmlIy0T7SmDS0vwXh0pVSKf4ggugz451SG7oIoCu7uJRCNFBV42lN6TNIhHDtnOUiVSzc&usqp=CAU"
-                alt="art"
-              />
+              <img src={data?.images?.second} alt="art" />
             </div>
             <div>
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfi740tigtxS0qENiTpW0-PrjbEpjyKWypL15bf28pslnH7jEJaM-9EyQDfcVD3TQZIq4&usqp=CAU"
-                alt="art"
-              />
+              <img src={data?.images?.third} alt="art" />
             </div>
           </div>
         </div>

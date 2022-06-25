@@ -6,6 +6,10 @@
   "teacherReviews": 467,
   "classReviews": 5,
   "learners": 21,
-  "image": "https://res.cloudinary.com/rsc/image/upload/w_1024/C0487230-01",
+  "images": {
+    "first": "../images/picture-1.jpg",
+    "second": "../images/picture-2.jpg",
+    "third": "../images/picture-3.jpg"
+  },
   "shortDescription": "In this 5 day class we will explore artists Monet, Matisse, Van Gogh, among others and then recreate painntings using crayon and watercolor. Students will have fun learning about the artists & creating their own art inspired by their work."
 }
