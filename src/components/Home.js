@@ -16,7 +16,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="border  text-left p-5">
+    <div className="text-left p-5">
       <h1 className="text-5xl font-bold">{data?.title}</h1>
       <p className="text-2xl mt-3 text-gray-400 font-semibold	flex items-center">
         {data?.type}
@@ -25,7 +25,7 @@ const Home = () => {
 
       <div className="flex justify-between lg:flex-row md:flex-row sm:flex-col flex-col mt-20">
         <article className="text-xl lg:w-1/2 md:w-1/2 sm:w-full w-full mr-5">
-          <p>{data?.shortDescription}</p>
+          <p className="font-semibold">{data?.shortDescription}</p>
           <div className="flex mt-8">
             <img
               src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-733872.jpg&fm=jpg"
@@ -43,7 +43,7 @@ const Home = () => {
                 className="text-yellow-400 text-2xl"
               ></AiFillStar>
             ))}
-            <span className="ml-3">
+            <span className="ml-3 text-gray-400">
               {data?.teacherReviews} total reviews for the teacher
             </span>
           </div>
@@ -54,17 +54,17 @@ const Home = () => {
                 className="text-yellow-400 text-2xl"
               ></AiFillStar>
             ))}
-            <span className="ml-3">
+            <span className="ml-3 text-gray-400">
               {" "}
               {data?.classReviews} reviews for the class
             </span>
           </div>
-          <p className="text-xl font-bold mt-5">
+          <p className="text-xl font-semibold mt-5">
             Completed by {data?.learners} learners
           </p>
 
-          <div className="flex items-center ">
-            <button className="bg-violet-700 p-3 text-white mt-10 rounded-full flex items-center">
+          <div className="flex items-center lg:flex-row md:flex-row sm:flex-col flex-col">
+            <button className="bg-violet-700 p-3 text-white mt-10 rounded-full flex items-center hover:bg-violet-500">
               See Class Schedule{" "}
               <FaAngleRight className="mt-1 ml-2 text-2xl"></FaAngleRight>
             </button>
@@ -78,7 +78,7 @@ const Home = () => {
           </div>
         </article>
 
-        <div className="img-container flex lg:w-1/2 md:w-1/2 sm:w-full w-full mt-3">
+        <div className="img-container flex lg:w-1/2 md:w-1/2 sm:w-full w-full mt-3 items-start">
           <div className="mr-3">
             <img
               src={data?.images?.first}
