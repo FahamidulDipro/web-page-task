@@ -33,17 +33,21 @@ const Home = () => {
             </h3>
           </div>
           <div className="flex items-center">
-            <AiFillStar></AiFillStar> <AiFillStar></AiFillStar>{" "}
-            <AiFillStar></AiFillStar>
-            <AiFillStar></AiFillStar>
-            <AiFillStar></AiFillStar>{" "}
+            {[...Array(5).keys()].map((num) => (
+              <AiFillStar
+                key={num}
+                className="text-yellow-400 text-2xl"
+              ></AiFillStar>
+            ))}
             <span className="ml-3">467 total reviews for the teacher</span>
           </div>
           <div className="flex items-center">
-            <AiFillStar></AiFillStar> <AiFillStar></AiFillStar>{" "}
-            <AiFillStar></AiFillStar>
-            <AiFillStar></AiFillStar>
-            <AiFillStar></AiFillStar>{" "}
+            {[...Array(5).keys()].map((num) => (
+              <AiFillStar
+                key={num}
+                className="text-yellow-400 text-2xl"
+              ></AiFillStar>
+            ))}
             <span className="ml-3">5 reviews for the class</span>
           </div>
         </article>
