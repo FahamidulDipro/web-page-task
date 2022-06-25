@@ -1,7 +1,11 @@
 import React from "react";
-import { AiFillStar, AiOutlineQuestionCircle } from "react-icons/ai";
+import {
+  AiFillStar,
+  AiOutlineQuestionCircle,
+  AiOutlineHeart,
+} from "react-icons/ai";
 import { FaAngleRight } from "react-icons/fa";
-
+import { RiShareForwardLine } from "react-icons/ri";
 const Home = () => {
   return (
     <div className="border  text-left p-5">
@@ -57,11 +61,18 @@ const Home = () => {
           </div>
           <p className="text-xl font-bold mt-5">Completed by 21 learners</p>
 
-          <div className="flex">
+          <div className="flex items-center ">
             <button className="bg-violet-700 p-3 text-white mt-10 rounded-full flex items-center">
               See Class Schedule{" "}
               <FaAngleRight className="mt-1 ml-2 text-2xl"></FaAngleRight>
             </button>
+            <p className="flex items-center mt-10 text-violet-700 font-bold mx-10">
+              <AiOutlineHeart className="text-2xl mr-1"></AiOutlineHeart> Save
+            </p>
+            <p className="flex items-center mt-10 text-violet-700 font-bold mx-10">
+              <RiShareForwardLine className="text-2xl mr-1"></RiShareForwardLine>{" "}
+              Share
+            </p>
           </div>
         </article>
 
