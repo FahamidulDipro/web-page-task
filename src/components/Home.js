@@ -1,5 +1,6 @@
 import React from "react";
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar, AiOutlineQuestionCircle } from "react-icons/ai";
+import { FaAngleRight } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -9,8 +10,12 @@ const Home = () => {
         ut saepe. Quisquam officiis rem sunt dignissimos similique ratione,
         consequuntur maiores?
       </h1>
+      <p className="text-2xl mt-3 text-gray-400 font-semibold	flex items-center">
+        Multi-day Course{" "}
+        <AiOutlineQuestionCircle className="mt-1 ml-3"></AiOutlineQuestionCircle>
+      </p>
 
-      <div className="flex justify-between lg:flex-row md:flex-row sm:flex-col flex-col mt-10">
+      <div className="flex justify-between lg:flex-row md:flex-row sm:flex-col flex-col mt-20">
         <article className="text-xl lg:w-1/2 md:w-1/2 sm:w-full w-full mr-5">
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -32,7 +37,7 @@ const Home = () => {
               Kimberly R Moseler
             </h3>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center mt-5">
             {[...Array(5).keys()].map((num) => (
               <AiFillStar
                 key={num}
@@ -41,7 +46,7 @@ const Home = () => {
             ))}
             <span className="ml-3">467 total reviews for the teacher</span>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center mt-3">
             {[...Array(5).keys()].map((num) => (
               <AiFillStar
                 key={num}
@@ -49,6 +54,14 @@ const Home = () => {
               ></AiFillStar>
             ))}
             <span className="ml-3">5 reviews for the class</span>
+          </div>
+          <p className="text-xl font-bold mt-5">Completed by 21 learners</p>
+
+          <div className="flex">
+            <button className="bg-violet-700 p-3 text-white mt-10 rounded-full flex items-center">
+              See Class Schedule{" "}
+              <FaAngleRight className="mt-1 ml-2 text-2xl"></FaAngleRight>
+            </button>
           </div>
         </article>
 
